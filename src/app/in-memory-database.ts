@@ -1,9 +1,10 @@
 import { InMemoryDbService } from "angular-in-memory-web-api";
+import { Category } from "./pages/categories/shared/category.model";
 
 export class InMemoryDatabase implements InMemoryDbService {
 
   createDb(){
-    const categories = [
+    const categories: Category[] = [
       { id: 1, nome: 'Moradia', descricao: 'Pagamentos de Contas da Casa' },
       { id: 2, nome: 'Saúde', descricao: 'Planos de Saúde e Remédios' },
       { id: 3, nome: 'Lazer', descricao: 'Cinema, Parques, Praia, etc' },
