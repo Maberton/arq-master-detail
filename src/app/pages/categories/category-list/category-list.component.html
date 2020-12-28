@@ -22,35 +22,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let categoria of categories">
       <td>
-        <strong>Lazer</strong><br>
-        <small>Cinema, parque, praia, etc</small>
+        <strong>{{categoria.nome}}</strong><br>
+        <small>{{categoria.descricao}}</small>
       </td>
       <td>
-        <a [routerLink]="[12, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="alert('excluiu')" class="btn btn-outline-danger btn-sm">Excluir</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>Lazer</strong><br>
-        <small>Cinema, parque, praia, etc</small>
-      </td>
-      <td>
-        <a [routerLink]="[12, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="alert('excluiu')" class="btn btn-outline-danger btn-sm">Excluir</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>Lazer</strong><br>
-        <small>Cinema, parque, praia, etc</small>
-      </td>
-      <td>
-        <a [routerLink]="[12, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="alert('excluiu')" class="btn btn-outline-danger btn-sm">Excluir</button>
+        <a [routerLink]="[categoria.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <button (click)="confirmaDelecao(categoria)" class="btn btn-outline-danger btn-sm">Excluir</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+<p-confirmDialog
+header="Confirmação de Exclusão"
+icon="pi pi-exclamation-triangle"
+>
+</p-confirmDialog>
